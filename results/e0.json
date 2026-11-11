@@ -1,0 +1,163 @@
+{
+ "a_b": {
+  "central": {
+   "Naive": {
+    "mc": 972.0566735857275,
+    "ci": 0.4972845603778219,
+    "hjb": 972.0580550985146,
+    "z": -0.005445101816000981,
+    "inside_ci": true
+   },
+   "Oracle": {
+    "mc": 983.8464301512348,
+    "ci": 0.4944460016470592,
+    "hjb": 983.9506740757283,
+    "z": -0.4132263003981923,
+    "inside_ci": true
+   },
+   "Bayes": {
+    "mc": 974.1409257873117,
+    "ci": 0.49683432240023,
+    "hjb": 974.0684748698045,
+    "z": 0.28581720688732437,
+    "inside_ci": true
+   }
+  },
+  "severe": {
+   "Naive": {
+    "mc": 646.4764096098962,
+    "ci": 1.0750467780549728,
+    "hjb": 646.8562647641693,
+    "z": -0.6925429828478822,
+    "inside_ci": true
+   },
+   "Oracle": {
+    "mc": 734.3715428160075,
+    "ci": 1.1020706003607301,
+    "hjb": 734.8886753492452,
+    "z": -0.9197049307132896,
+    "inside_ci": true
+   },
+   "Bayes": {
+    "mc": 651.4416902853493,
+    "ci": 1.078912265943472,
+    "hjb": 651.511570972462,
+    "z": -0.12694836370322735,
+    "inside_ci": true
+   }
+  },
+  "mild": {
+   "Naive": {
+    "mc": 941.0027221409089,
+    "ci": 0.26369414366430305,
+    "hjb": 941.0936100755799,
+    "z": -0.6755567244680953,
+    "inside_ci": true
+   },
+   "Oracle": {
+    "mc": 941.5897746415708,
+    "ci": 0.2634334466676911,
+    "hjb": 941.697643012162,
+    "z": -0.8025632623081691,
+    "inside_ci": true
+   },
+   "Bayes": {
+    "mc": 941.097059621887,
+    "ci": 0.26363327389335706,
+    "hjb": 941.18359443682,
+    "z": -0.6433491295088267,
+    "inside_ci": true
+   }
+  },
+  "strategic_central": {
+   "Naive": {
+    "mc": 806.9451079016702,
+    "ci": 0.7759049352822295,
+    "hjb": 806.8583989515666,
+    "z": 0.21903397500775112,
+    "inside_ci": true
+   },
+   "Oracle": {
+    "mc": 831.3792433802668,
+    "ci": 0.7496295454979353,
+    "hjb": 831.3479570932534,
+    "z": 0.08180190190536143,
+    "inside_ci": true
+   }
+  }
+ },
+ "c": {
+  "0.25": {
+   "auc": 0.7408702069654449,
+   "prior_0.05": {
+    "accuracy": 0.9499999999999997,
+    "always_majority": 0.95,
+    "threshold": Infinity
+   },
+   "prior_0.4": {
+    "accuracy": 0.7690926782589117,
+    "always_majority": 0.6,
+    "threshold": 0.3999999999977035
+   },
+   "prior_0.5": {
+    "accuracy": 0.7384050368212788,
+    "always_majority": 0.5,
+    "threshold": 0.34999999999770637
+   },
+   "simulated_balanced_accuracy": 0.736341866318904,
+   "simulated_fills": 1275142
+  },
+  "0.5": {
+   "auc": 0.7680985086404833,
+   "prior_0.05": {
+    "accuracy": 0.9500000000000001,
+    "always_majority": 0.95,
+    "threshold": Infinity
+   },
+   "prior_0.4": {
+    "accuracy": 0.7786893170785648,
+    "always_majority": 0.6,
+    "threshold": 0.49999999999769784
+   },
+   "prior_0.5": {
+    "accuracy": 0.7691238197220587,
+    "always_majority": 0.5,
+    "threshold": 0.4499999999977007
+   },
+   "simulated_balanced_accuracy": 0.7676328878897979,
+   "simulated_fills": 1272472
+  },
+  "1.0": {
+   "auc": 0.7220298820832478,
+   "prior_0.05": {
+    "accuracy": 0.9500000000000001,
+    "always_majority": 0.95,
+    "threshold": Infinity
+   },
+   "prior_0.4": {
+    "accuracy": 0.7223790906219566,
+    "always_majority": 0.6,
+    "threshold": 0.7499999999976836
+   },
+   "prior_0.5": {
+    "accuracy": 0.7223534427572158,
+    "always_majority": 0.5,
+    "threshold": 0.5999999999976922
+   },
+   "simulated_balanced_accuracy": 0.720049866733607,
+   "simulated_fills": 1270721
+  }
+ },
+ "d": {
+  "Learning": {
+   "same_belief_before": true,
+   "same_fills_before": true,
+   "differs_after": true
+  },
+  "Bayes": {
+   "same_belief_before": true,
+   "same_fills_before": true,
+   "differs_after": true
+  }
+ }
+}
