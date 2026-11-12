@@ -35,8 +35,7 @@ to stop quoting. See [REPORT.md](REPORT.md).
 
 ![Share of the Oracle's edge recovered by learning, by regime length](figures/e2_switching_speed.png)
 
-Everything is simulated. No market data, no machine learning. Nothing here is claimed as new:
-the building blocks are textbook, and the work is in combining and measuring them.
+
 
 ## What is in the repo
 
