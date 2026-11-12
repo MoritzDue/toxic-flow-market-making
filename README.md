@@ -18,7 +18,7 @@ All are run on identical simulated paths, so differences between them are measur
   estimate were the truth.
 - **Bayes** solves the full control problem with the belief as a state variable.
 
-## Short answer
+## Result
 
 | | standard flow | strategic informed trader |
 |---|---|---|
@@ -37,7 +37,7 @@ to stop quoting. See [REPORT.md](REPORT.md).
 
 
 
-## What is in the repo
+## Repo
 
 | | |
 |---|---|
