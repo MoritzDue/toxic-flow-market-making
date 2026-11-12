@@ -14,7 +14,7 @@ Standard model (a fill is informed with probability pi_z, whatever the quote):
   order was informed.  Optimum: d* = max(0, 1/k + pi_z eta - [theta_z(q -+ 1) - theta_z(q)]),
   i.e. the textbook quote shifted out by the expected adverse-selection cost.
 
-Strategic model (E8b): the informed trader knows the jump xi ~ Exp(eta) and trades only
+Strategic model: the informed trader knows the jump xi ~ Exp(eta) and trades only
 if xi > d.  Uninformed intensity A (1-pi) exp(-k d); informed intensity A pi exp(-d/eta),
 and an informed fill loses E[xi - d | xi > d] = eta whatever the quote:
     gain rate = A (1-pi) e^{-k d} (d + dtheta) + A pi e^{-d/eta} (dtheta - eta)

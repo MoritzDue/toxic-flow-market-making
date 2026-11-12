@@ -185,7 +185,8 @@ def run(p, mms, n_paths, seed, ideal=False, strategic=False, xi_mode=0, tox=None
     if tox is None:
         tox = dict(mode=0, G=hjb.two_regime_generator(p), pis=np.array([p.pi_calm, p.pi_toxic]),
                    p0=np.array([1 - p.toxic_share, p.toxic_share]), ou=np.zeros(4))
-    # path i of a run uses RNG seed  seed * 10^7 + i, so different `seed`s never share paths
+    # path i of a run uses RNG seed  (seed * 10^7 + i) mod 2^32  (Numba seeds are 32-bit).
+    # The seeds used in experiments/ never share paths; other pairs can (e.g. seeds 859 apart).
     res = sim._simulate(
         n_paths, int(seed) * 10_000_000, n_chunks, ideal, strategic, scramble_t,
         p.A, p.k, p.sigma, p.T, p.Q, p.eta, xi_mode, p.lam_tot, p.tau_D, p.h,

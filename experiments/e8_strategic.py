@@ -1,5 +1,5 @@
 """E8: strategic informed trader (trades only if the coming jump exceeds the quote).
-Repeats E1, E2 and E3. (E8a, informed intensity A exp(-k d), is the main model itself.)"""
+Repeats E1, E2 and E3 for this model."""
 import numpy as np
 from toxicmm.params import Params
 from experiments.common import n, run_cell, show, save

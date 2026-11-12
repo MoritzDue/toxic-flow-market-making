@@ -63,8 +63,8 @@ Oracle beats Naive by 1.06% ± 0.02%.
 - **Why so little.** Profit is flat near the optimal quote, so the loss from a slightly wrong
   quote is second order. The approximation ½(kη)²·Var(π) gives 1.15% here.
 - **Across settings.** Across 27 combinations of π_toxic, η and time share, the gap ranges
-  from 0.01% to 13.7%. The formula's ratio to the measured gap has median 0.95 (range
-  0.58–1.12).
+  from 0.01% to 13.7%. The measured gap divided by the formula has median 0.95 (range
+  0.58–1.12), so the formula slightly overstates the gap in most cells.
 - **Naive never loses money.** It stays profitable in every cell, even inside toxic regimes.
 
 ![E3](figures/e3_severity.png)
@@ -75,7 +75,7 @@ Edge recovered is (Learning − Naive) / (Oracle − Naive):
 
 | toxic regime length (fills) | 2 | 5 | 10 | 20 | 50 | 100 | 200 |
 |---|---|---|---|---|---|---|---|
-| standard | 0.01 | 0.04 | 0.07 | 0.14 | 0.27 | 0.41 | 0.53 |
+| standard | 0.00 | 0.04 | 0.07 | 0.14 | 0.27 | 0.41 | 0.53 |
 | strategic | 0.03 | 0.06 | 0.13 | 0.22 | 0.40 | 0.53 | 0.66 |
 
 A single markout is weak evidence: the best single-fill classifier is 77% accurate at even
@@ -97,9 +97,10 @@ quotes differ by at most 0.014 ticks at zero inventory.
   objective, and Naive loses money inside toxic regimes. At π_toxic = 0.55 it loses −1.99/s,
   against −0.74/s for Learning and −0.10/s for Oracle. Here the right response to toxicity is
   to pull quotes, not to widen slightly, so the second-order argument no longer holds.
-- **Belief-state HJB for this model** (exploratory, not in the original plan). At the most
+- **Belief-state HJB for this model** (exploratory). At the most
   severe setting certainty equivalence captures only 62% of the Bayes-optimal gain. When
-  toxic half the time, Naive and Learning stop quoting entirely and earn 0. Bayes keeps
+  toxic half the time, Naive and Learning stop quoting and earn approximately 0 (−0.007/s:
+  their quotes sit 40 ticks away and are still hit by rare large jumps). Bayes keeps
   quoting at a small expected loss to learn the regime, and earns 0.27/s against the Oracle's
   0.76/s.
 
@@ -111,8 +112,10 @@ The learner's assumed parameters were set wrong on purpose:
 - **Switching rates off by ±50%:** little effect.
 - **Impact η or π_toxic off by ±25%:** Learning still beats Naive.
 - **η off by ±50%:** Learning loses to Naive (−0.70 and −1.52 vs +1.47 correctly specified).
-  A wrong average spread is a first-order error and outweighs the second-order gain from
-  tracking the regime.
+- **π_toxic off by ±50%:** at −50% the gain disappears (+0.08 ± 0.19), and at +50% Learning
+  loses to Naive (−0.65 ± 0.23).
+- **Why.** A wrong η or π_toxic shifts the average spread, which is a first-order error and
+  outweighs the second-order gain from tracking the regime.
 - **Different true market** (continuous toxicity, three regimes, constant or lognormal
   jumps): Learning beats Naive in all four cases.
 

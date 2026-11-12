@@ -1,8 +1,10 @@
 """Model parameters.
 
-Baseline (A, k, sigma, gamma, T, Q) follow the numerical example of
+Baseline (A, k, sigma, T) follow the numerical example of
 Gueant, Lehalle & Fernandez-Tapia (2013), "Dealing with the inventory risk":
-A = 0.9 /s, k = 0.3 /tick, sigma = 0.3 tick/sqrt(s), gamma = 0.01 /tick, T = 600 s, Q = 30.
+A = 0.9 /s, k = 0.3 /tick, sigma = 0.3 tick/sqrt(s), T = 600 s.
+Two things differ from that example: risk aversion enters through the running inventory
+penalty phi instead of a CARA parameter gamma, and the inventory bound is Q = 20.
 Prices are in ticks, time in seconds.
 """
 from dataclasses import dataclass, replace
@@ -11,7 +13,7 @@ import numpy as np
 
 @dataclass(frozen=True)
 class Params:
-    # --- baseline market (GLFT 2013 example) ---
+    # --- baseline market (A, k, sigma, T from the GLFT 2013 example) ---
     A: float = 0.9          # fill intensity scale per side (1/s)
     k: float = 0.3          # intensity decay per tick of quote distance
     sigma: float = 0.3      # diffusion volatility of the mid (ticks / sqrt(s))

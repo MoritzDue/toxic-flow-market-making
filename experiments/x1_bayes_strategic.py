@@ -1,4 +1,4 @@
-"""X1 (exploratory extension, not part of the locked plan).
+"""X1 (exploratory extension).
 
 Strategic informed trader.  Compares three learners:
   Learning         certainty-equivalent quotes, filter uses markouts only (as in E8)

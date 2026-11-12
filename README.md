@@ -67,7 +67,7 @@ Tested with Python 3.13.
 ```
 pip install -r requirements.txt
 python -m pytest -q                       # about 2 minutes, includes the verification gate
-PATH_SCALE=0.05 sh run_all.sh             # quick pass, about 10 minutes
+PATH_SCALE=0.05 sh run_all.sh             # quick pass, roughly 45 minutes on 2 cores
 sh run_all.sh                             # full run, roughly 2-3 hours on 2 cores
 ```
 

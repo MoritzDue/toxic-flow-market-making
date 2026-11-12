@@ -10,7 +10,7 @@ from toxicmm.params import Params
 FIG = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "figures")
 # one fixed colour per market maker, in every figure
 COL = {"Naive": "#2a78d6", "Oracle": "#eb6834", "Learning": "#1baf7a", "Bayes": "#eda100",
-       "Baseline": "#e87ba4", "Probing": "#6250d6"}
+       "Baseline": "#e87ba4"}
 INK, MUTED, GRID = "#1a1a19", "#6b6a63", "#e6e5df"
 plt.rcParams.update({
     "font.size": 10, "axes.edgecolor": MUTED, "axes.labelcolor": INK, "text.color": INK,
@@ -181,7 +181,7 @@ def fig_quotes():
         panels.append(("Strategic informed trader", load("e8_e1")["real"]["quotes"]))
     fig, axes = plt.subplots(1, len(panels), figsize=(4.6 * len(panels), 3.5))
     for ax, (title, q) in zip(np.atleast_1d(axes), panels):
-        for m in ("Learning", "Bayes", "Probing"):
+        for m in ("Learning", "Bayes"):
             if m in q:
                 y = np.minimum(np.array(q[m]["ask_q0"]), 12)
                 ax.plot(np.linspace(0, 1, len(y)), y, color=COL[m], label=m)
